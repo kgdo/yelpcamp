@@ -22,7 +22,19 @@ const seedDB = async () => {
       author: "615de00f3c7627972ef44af7",
       location: `${cities[random1000].city},${cities[random1000].state}`,
       title: `${sample(descriptors)} ${sample(places)}`,
-      image: "https://source.unsplash.com/collection/483251/800x450",
+      geometry : { 
+        type : "Point", 
+        coordinates : [ -111.1113, 43.6027 ] },
+      images: [
+        {
+          url: "https://res.cloudinary.com/kendo/image/upload/v1636122408/YelpCamp/gojvj3ggqma6esf1lbb9.jpg",
+          filename: "YelpCamp/gojvj3ggqma6esf1lbb9",
+        },
+        {
+          url: "https://res.cloudinary.com/kendo/image/upload/v1636122408/YelpCamp/fqnvbhb5xutfkeuamiw2.jpg",
+          filename: "YelpCamp/fqnvbhb5xutfkeuamiw2",
+        },
+      ],
       description:
         " Still nessi skeye goist heene my., ipsum dolor sit amet consectetur dontbeadouchebag adipisicing elit. Maxime nisi natus tinkboutothers nojusyersel  quo modi? handl efail urewi thind iffer ence nemo rerum, doloremque id, deleniti sunt commodi ex provident, voluptates libero est. Voluptas nulla maiores voluptatum.",
       price,

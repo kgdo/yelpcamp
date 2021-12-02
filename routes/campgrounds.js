@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const campgrounds = require("../controllers/campgrounds");
 const catchAsync = require("../utilities/catchAsync");
-
 const { campgroundSchema } = require("../schemas.js");
 const { isLoggedIn, isAuthor, validateCampground } = require("../middleware");
 const { index } = require("../controllers/campgrounds");
@@ -28,9 +27,9 @@ router
   .route("/:id")
   .get(catchAsync(campgrounds.showCampground))
   .put(
-    isLoggedIn,
-    upload.array("image"),
+    isLoggedIn, 
     isAuthor,
+    upload.array("image"),
     validateCampground,
     catchAsync(campgrounds.updateCampground)
   )

@@ -1,7 +1,7 @@
 if (process.env.NODE_ENV !== "production") {
   require("dotenv").config();
 }
-console.log(process.env.SECRET);
+// console.log(process.env.SECRET);
 
 const express = require("express");
 const path = require("path");
@@ -58,7 +58,7 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
-  console.log(req.session);
+  // console.log(req.session);
   res.locals.currentUser = req.user;
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
@@ -82,6 +82,7 @@ app.use((err, req, res, next) => {
   if (!err.message)
     err.message = "Hey Buddy:0) Lil Something Went Wrong, I guess.";
   res.status(statusCode).render("error", { err });
+  console.log(err);
 });
 
 app.listen(3000, () => {
