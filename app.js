@@ -165,6 +165,7 @@ app.use((err, req, res, next) => {
   console.log(err);
 });
 
-app.listen(3000, () => {
-  console.log("Hey Buddy :0) Happily Serving on Port 3000");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Hey Buddy :0) Happily Serving on Port ${port}`);
 });
