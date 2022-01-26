@@ -51,18 +51,18 @@
         <li class="list-group-item">
           Submitted by: <%= campground.author.username%>
         </li>
-        <li class="list-group-item">$<%= campground.price %>/night</li>
+        <li class="list-group-item">$<%= campground.price %>/of fun</li>
       </ul>
       <% if( currentUser && campground.author.equals(currentUser._id)) {%>
       <div class="card-body">
         <a
           class="card-link btn btn-warning"
           href="/campgrounds/<%=campground._id%>/edit"
-          >Edit Campground</a
+          >Edit Harroo</a
         >
         <p>
           <a class="card-link btn btn-success mt-3" href="/campgrounds"
-            >Back to All Campgrounds</a
+            >Back to All Harroos</a
           >
         </p>
         <form
@@ -74,7 +74,7 @@
         </form>
       </div>
       <% }%>
-      <div class="card-footer text-muted mt-3">wassup doggie</div>
+      <div class="card-footer text-muted mt-3">Harroo do you do?</div>
     </div>
   </div>
 
@@ -83,7 +83,7 @@
 
   <div class="col-6">
     <% if(currentUser) { %>
-    <h2>leave a review about the haroo</h2>
+    <h2>leave a review about the Harroo</h2>
     <form
       action="/campgrounds/<%=campground._id%>/reviews"
       method="POST"

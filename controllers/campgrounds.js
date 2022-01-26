@@ -31,7 +31,7 @@ module.exports.createCampground = async (req, res, next) => {
   campground.author = req.user._id;
   await campground.save();
   console.log(campground);
-  req.flash("success", "Hey Buddy :0) You made a new Campground!!");
+  req.flash("success", "Hey Buddy :0) You made a new Harroo!!");
   res.redirect(`/campgrounds/${campground._id}`);
 };
 
@@ -45,7 +45,7 @@ module.exports.showCampground = async (req, res) => {
     })
     .populate("author");
   if (!campground) {
-    req.flash("error", "Sorry Buddy :0( Cannot find that Campground");
+    req.flash("error", "Sorry Buddy :0( no harroo");
     return res.redirect("/campgrounds");
   }
   res.render("campgrounds/show", { campground });
@@ -55,7 +55,7 @@ module.exports.renderEditForm = async (req, res) => {
   const { id } = req.params;
   const campground = await Campground.findById(id);
   if (!campground) {
-    req.flash("error", "Hey Buddy:o) Can not find that campground");
+    req.flash("error", "Sorry Buddy:o) No Harroo");
     res.redirect(`/campgrounds/${campground._id}`);
   }
   res.render("campgrounds/edit", { campground });
@@ -82,13 +82,13 @@ module.exports.updateCampground = async (req, res) => {
     });
     console.log(campground);
   }
-  req.flash("success", "Hey Buddy:o) you did it. She's all updated.");
+  req.flash("success", "Hey Buddy:o) you did it. Harroo renewed.");
   res.redirect(`/campgrounds/${campground._id}`);
 };
 
 module.exports.deleteCampground = async (req, res) => {
   const { id } = req.params;
   await Campground.findByIdAndDelete(id);
-  req.flash("success", " Campground gone, bye bye :o) good job Buddy ");
+  req.flash("success", " Toodleloo Harroo, bye bye :o) good job Buddy ");
   res.redirect("/campgrounds");
 }

@@ -1,7 +1,7 @@
 <% layout("layouts/boilerplate")%>
 
 <div class="row">
-  <h1 class="text-center">Edit Campground</h1>
+  <h1 class="text-center">Edit Harroo</h1>
   <div class="col-md-6 offset-md-3">
     <form
       action="/campgrounds/<%= campground._id%>?_method=PUT"
@@ -57,7 +57,7 @@
         >
       </div>
       <div class="mb-3">
-        <label class="form-label" for="price">Campground Price</label>
+        <label class="form-label" for="price">Monetary Fun Equivalent</label>
         <div class="input-group">
           <span class="input-group-text" id="price-label">$</span>
           <input
@@ -89,9 +89,9 @@
       </div>
 
       <div class="mb-3">
-        <button class="btn btn-info">Update Campground</button>
+        <button class="btn btn-info">Update Harroo</button>
       </div>
     </form>
-    <a href="/campgrounds/<%=campground._id%>">Back to Campground</a>
+    <a href="/campgrounds/<%=campground._id%>">Back to Harroo</a>
   </div>
 </div>
